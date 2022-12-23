@@ -14,10 +14,6 @@ This app demonstrates the basic usage of [KLineWebRTC](https://github.com/klinec
 1. Select the `KlineWebRTCSwiftExample` project from the left Navigator.
 2. For each **Target**, select **Signing & Capabilities** tab and update your **Team** and **Bundle Identifier** to your preference.
 
-### Run
-1. **Run** the project from the menu **Product** → **Run** or by ⌘R.
-
-If you encounter code signing issues, make sure you change the **Team** and **bundle id** from the previous step.
 
 ### Connect
 
