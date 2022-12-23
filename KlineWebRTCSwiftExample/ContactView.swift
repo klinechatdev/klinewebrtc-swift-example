@@ -31,6 +31,13 @@ struct ContactView: View {
         })
     }
     
+    func testVideoCall() {
+        var rtcToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzE4ODU0MTksImlzcyI6IkFQSWcybW1MSHhTS3hYSiIsIm5iZiI6MTY3MTc5OTAxOSwic3ViIjoidXNlci0yZjNlNDE2MSIsInZpZGVvIjp7InJvb20iOiJyb29tLWRkNDAxNDY5Iiwicm9vbUpvaW4iOnRydWV9fQ.SXI0dl7_Ihw3gARKRTAOCEsOmfoc0AJaLMTtUvGieFU"
+        roomCtx.join(url: "wss://klinkrtc.livekit.cloud", token: rtcToken).then { room in
+            appCtx.connectionHistory.update(room: room)
+        }
+    }
+    
     func fetchContacts() {
         networkManager.getContacts(completion: { result in
             switch result {
@@ -56,6 +63,12 @@ struct ContactView: View {
                 Button(action: fetchContacts, label: {
                     Text("Fetch Contacts")
                 })
+                Divider()
+                Button(action: testVideoCall, label: {
+                    Text("Connect to testing room")
+                })
+                .foregroundColor(Color.blue)
+                Divider()
                 List(contacts) { contact in
                     HStack{
                         Image(systemSymbol: .personCircleFill)

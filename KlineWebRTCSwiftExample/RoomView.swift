@@ -8,9 +8,27 @@
 import SwiftUI
 import KLineWebRTC
 import LiveKit
+import SFSafeSymbols
+import WebRTC
 
 let adaptiveMin = 170.0
 let toolbarPlacement: ToolbarItemPlacement = .bottomBar
+
+extension CIImage {
+    // helper to create a `CIImage` for both platforms
+    convenience init(named name: String) {
+       
+        self.init(cgImage: UIImage(named: name)!.cgImage!)
+      
+    }
+}
+
+extension RTCIODevice: Identifiable {
+
+    public var id: String {
+        deviceId
+    }
+}
 
 struct RoomView: View {
 
@@ -21,6 +39,13 @@ struct RoomView: View {
     @State private var screenPickerPresented = false
 
     @State private var showConnectionTime = true
+
+    func scrollToBottom(_ scrollView: ScrollViewProxy) {
+//        guard let last = room.messages.last else { return }
+//        withAnimation {
+//            scrollView.scrollTo(last.id)
+//        }
+    }
 
     func sortedParticipants() -> [ObservableParticipant] {
         room.allParticipants.values.sorted { p1, p2 in
@@ -48,8 +73,37 @@ struct RoomView: View {
                     .padding()
             }
 
-//            HorVStack(axis: geometry.isTall ? .vertical : .horizontal, spacing: 5) {
-//
+            HorVStack(axis: geometry.isTall ? .vertical : .horizontal, spacing: 5) {
+                if let focusParticipant = room.focusParticipant {
+                    ZStack(alignment: .bottomTrailing) {
+                        ParticipantView(participant: focusParticipant,
+                                        videoViewMode: appCtx.videoViewMode) { _ in
+                            room.focusParticipant = nil
+                        }
+                        .overlay(RoundedRectangle(cornerRadius: 5)
+                                    .stroke(Color.red.opacity(0.7), lineWidth: 5.0))
+                        Text("SELECTED")
+                            .font(.system(size: 10))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 2)
+                            .background(Color.red.opacity(0.7))
+                            .cornerRadius(8)
+                            .padding(.vertical, 35)
+                            .padding(.horizontal, 10)
+                    }
+
+                } else {
+                    // Array([room.allParticipants.values, room.allParticipants.values].joined())
+                    ParticipantLayout(sortedParticipants(), spacing: 5) { participant in
+                        ParticipantView(participant: participant,
+                                        videoViewMode: appCtx.videoViewMode) { participant in
+                            room.focusParticipant = participant
+
+                        }
+                    }
+                }
 //                Group {
 //                    if let focusParticipant = room.focusParticipant {
 //                        ZStack(alignment: .bottomTrailing) {
@@ -81,6 +135,7 @@ struct RoomView: View {
 //                            }
 //                        }
 //                    }
+//
 //                }
 //                .frame(
 //                    minWidth: 0,
@@ -88,7 +143,7 @@ struct RoomView: View {
 //                    minHeight: 0,
 //                    maxHeight: .infinity
 //                )
-//            }
+            }
         }
         .padding(5)
     }
@@ -99,6 +154,16 @@ struct RoomView: View {
             content(geometry: geometry)
                 .toolbar {
                     ToolbarItemGroup(placement: toolbarPlacement) {
+
+//                        Text("(\(room.room.remoteParticipants.count)) ")
+//
+//                        // VideoView mode switcher
+//                        Picker("Mode", selection: $appCtx.videoViewMode) {
+//                            Text("Fit").tag(VideoView.LayoutMode.fit)
+//                            Text("Fill").tag(VideoView.LayoutMode.fill)
+//                        }
+//                        .pickerStyle(SegmentedPickerStyle())
+//
                         Button(action: {
                             room.switchCameraPosition()
                         },
@@ -258,68 +323,91 @@ struct ParticipantLayout<Content: View>: View {
                 grid(axis: .vertical, geometry: geometry)
             } else if geometry.size.height <= 300 {
                 grid(axis: .horizontal, geometry: geometry)
+            } else {
+
+                let verticalWhenTall: Axis = geometry.isTall ? .vertical : .horizontal
+                let horizontalWhenTall: Axis = geometry.isTall ? .horizontal : .vertical
+
+                switch views.count {
+                // simply return first view
+                case 1: views[0]
+                case 3: HorVStack(axis: verticalWhenTall, spacing: spacing) {
+                    views[0]
+                    HorVStack(axis: horizontalWhenTall, spacing: spacing) {
+                        views[1]
+                        views[2]
+                    }
+                }
+                case 5: HorVStack(axis: verticalWhenTall, spacing: spacing) {
+                    views[0]
+                    if geometry.isTall {
+                        HStack(spacing: spacing) {
+                            views[1]
+                            views[2]
+                        }
+                        HStack(spacing: spacing) {
+                            views[3]
+                            views[4]
+
+                        }
+                    } else {
+                        VStack(spacing: spacing) {
+                            views[1]
+                            views[3]
+                        }
+                        VStack(spacing: spacing) {
+                            views[2]
+                            views[4]
+                        }
+                    }
+                }
+                //            case 6:
+                //                if geometry.isTall {
+                //                    VStack {
+                //                        HStack {
+                //                            views[0]
+                //                            views[1]
+                //                        }
+                //                        HStack {
+                //                            views[2]
+                //                            views[3]
+                //                        }
+                //                        HStack {
+                //                            views[4]
+                //                            views[5]
+                //                        }
+                //                    }
+                //                } else {
+                //                    VStack {
+                //                        HStack {
+                //                            views[0]
+                //                            views[1]
+                //                            views[2]
+                //                        }
+                //                        HStack {
+                //                            views[3]
+                //                            views[4]
+                //                            views[5]
+                //                        }
+                //                    }
+                //                }
+                default:
+                    let c = computeColumn(with: geometry)
+                    VStack(spacing: spacing) {
+                        ForEach(0...(c.y - 1), id: \.self) { y in
+                            HStack(spacing: spacing) {
+                                ForEach(0...(c.x - 1), id: \.self) { x in
+                                    let index = (y * c.x) + x
+                                    if index < views.count {
+                                        views[index]
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
             }
-//            if views.isEmpty {
-//                EmptyView()
-//            } else if geometry.size.width <= 300 {
-//                grid(axis: .vertical, geometry: geometry)
-//            } else if geometry.size.height <= 300 {
-//                grid(axis: .horizontal, geometry: geometry)
-//            } else {
-//
-//                let verticalWhenTall: Axis = geometry.isTall ? .vertical : .horizontal
-//                let horizontalWhenTall: Axis = geometry.isTall ? .horizontal : .vertical
-//
-//                switch views.count {
-//                // simply return first view
-//                case 1: views[0]
-//                case 3: HorVStack(axis: verticalWhenTall, spacing: spacing) {
-//                    views[0]
-//                    HorVStack(axis: horizontalWhenTall, spacing: spacing) {
-//                        views[1]
-//                        views[2]
-//                    }
-//                }
-//                case 5: HorVStack(axis: verticalWhenTall, spacing: spacing) {
-//                    views[0]
-//                    if geometry.isTall {
-//                        HStack(spacing: spacing) {
-//                            views[1]
-//                            views[2]
-//                        }
-//                        HStack(spacing: spacing) {
-//                            views[3]
-//                            views[4]
-//
-//                        }
-//                    } else {
-//                        VStack(spacing: spacing) {
-//                            views[1]
-//                            views[3]
-//                        }
-//                        VStack(spacing: spacing) {
-//                            views[2]
-//                            views[4]
-//                        }
-//                    }
-//                }
-//                default:
-//                    let c = computeColumn(with: geometry)
-//                    VStack(spacing: spacing) {
-//                        ForEach(0...(c.y - 1), id: \.self) { y in
-//                            HStack(spacing: spacing) {
-//                                ForEach(0...(c.x - 1), id: \.self) { x in
-//                                    let index = (y * c.x) + x
-//                                    if index < views.count {
-//                                        views[index]
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//
-//                }
-//            }
         }
     }
 }

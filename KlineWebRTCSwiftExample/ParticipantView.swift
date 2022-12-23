@@ -11,11 +11,11 @@ import LiveKit
 
 struct ParticipantView: View {
 
-    @ObservedObject var participant: RTCObservableParticipant
+    @ObservedObject var participant: ObservableParticipant
     @EnvironmentObject var appCtx: RTCAppContext
 
     var videoViewMode: VideoView.LayoutMode = .fill
-    var onTap: ((_ participant: RTCObservableParticipant) -> Void)?
+    var onTap: ((_ participant: ObservableParticipant) -> Void)?
 
     @State private var isRendering: Bool = false
     @State private var dimensions: Dimensions?

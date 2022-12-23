@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/klinechatdev/KLineWebRTC.git",
       "state" : {
-        "revision" : "f11e3d03fba4ed9cb8b5e985d6ee55b671c0556c",
-        "version" : "1.1.0"
+        "revision" : "8d7546112d231d84f8858c74e7f1772e85ec2f9b",
+        "version" : "1.1.2"
       }
     },
     {
