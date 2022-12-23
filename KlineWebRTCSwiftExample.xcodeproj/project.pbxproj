@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A702C5D2954552100D33F73 /* KlineWebRTCSwiftExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A702C5C2954552100D33F73 /* KlineWebRTCSwiftExampleApp.swift */; };
+		0A702C612954552900D33F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A702C602954552900D33F73 /* Assets.xcassets */; };
+		0A702C642954552900D33F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A702C632954552900D33F73 /* Preview Assets.xcassets */; };
+		0A702C6C2954564B00D33F73 /* KLineWebRTC in Frameworks */ = {isa = PBXBuildFile; productRef = 0A702C6B2954564B00D33F73 /* KLineWebRTC */; };
+		0A702C7129545C5100D33F73 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A702C7029545C5100D33F73 /* NetworkManager.swift */; };
+		0A702C7429545CA000D33F73 /* RoomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A702C7329545C9F00D33F73 /* RoomData.swift */; };
+		0A702C7629545CB900D33F73 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A702C7529545CB900D33F73 /* Contact.swift */; };
+		0A702C7A29545D9B00D33F73 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A702C7929545D9B00D33F73 /* ContactView.swift */; };
+		0A702C7C29545DD200D33F73 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A702C7B29545DD200D33F73 /* RoomView.swift */; };
+		0A702C7E29545DF600D33F73 /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A702C7D29545DF600D33F73 /* ParticipantView.swift */; };
+		0A702C84295464E700D33F73 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 0A702C83295464E700D33F73 /* SFSafeSymbols */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A702C592954552100D33F73 /* KlineWebRTCSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlineWebRTCSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A702C5C2954552100D33F73 /* KlineWebRTCSwiftExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlineWebRTCSwiftExampleApp.swift; sourceTree = "<group>"; };
+		0A702C602954552900D33F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A702C632954552900D33F73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0A702C7029545C5100D33F73 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0A702C7329545C9F00D33F73 /* RoomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomData.swift; sourceTree = "<group>"; };
+		0A702C7529545CB900D33F73 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		0A702C7929545D9B00D33F73 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		0A702C7B29545DD200D33F73 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		0A702C7D29545DF600D33F73 /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A702C562954552100D33F73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A702C84295464E700D33F73 /* SFSafeSymbols in Frameworks */,
+				0A702C6C2954564B00D33F73 /* KLineWebRTC in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A702C502954552100D33F73 = {
+			isa = PBXGroup;
+			children = (
+				0A702C5B2954552100D33F73 /* KlineWebRTCSwiftExample */,
+				0A702C5A2954552100D33F73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0A702C5A2954552100D33F73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A702C592954552100D33F73 /* KlineWebRTCSwiftExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A702C5B2954552100D33F73 /* KlineWebRTCSwiftExample */ = {
+			isa = PBXGroup;
+			children = (
+				0A702C7F295460DB00D33F73 /* Support */,
+				0A702C7929545D9B00D33F73 /* ContactView.swift */,
+				0A702C5C2954552100D33F73 /* KlineWebRTCSwiftExampleApp.swift */,
+				0A702C7D29545DF600D33F73 /* ParticipantView.swift */,
+				0A702C7B29545DD200D33F73 /* RoomView.swift */,
+				0A702C602954552900D33F73 /* Assets.xcassets */,
+				0A702C7229545C7C00D33F73 /* Models */,
+				0A702C622954552900D33F73 /* Preview Content */,
+				0A702C6F29545BC200D33F73 /* Utils */,
+			);
+			path = KlineWebRTCSwiftExample;
+			sourceTree = "<group>";
+		};
+		0A702C622954552900D33F73 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0A702C632954552900D33F73 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0A702C6F29545BC200D33F73 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0A702C7029545C5100D33F73 /* NetworkManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0A702C7229545C7C00D33F73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A702C7329545C9F00D33F73 /* RoomData.swift */,
+				0A702C7529545CB900D33F73 /* Contact.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A702C7F295460DB00D33F73 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A702C582954552100D33F73 /* KlineWebRTCSwiftExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A702C672954552A00D33F73 /* Build configuration list for PBXNativeTarget "KlineWebRTCSwiftExample" */;
+			buildPhases = (
+				0A702C552954552100D33F73 /* Sources */,
+				0A702C562954552100D33F73 /* Frameworks */,
+				0A702C572954552100D33F73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KlineWebRTCSwiftExample;
+			packageProductDependencies = (
+				0A702C6B2954564B00D33F73 /* KLineWebRTC */,
+				0A702C83295464E700D33F73 /* SFSafeSymbols */,
+			);
+			productName = KlineWebRTCSwiftExample;
+			productReference = 0A702C592954552100D33F73 /* KlineWebRTCSwiftExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A702C512954552100D33F73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					0A702C582954552100D33F73 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = 0A702C542954552100D33F73 /* Build configuration list for PBXProject "KlineWebRTCSwiftExample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A702C502954552100D33F73;
+			packageReferences = (
+				0A702C6A2954564B00D33F73 /* XCRemoteSwiftPackageReference "KLineWebRTC" */,
+				0A702C82295464E700D33F73 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+			);
+			productRefGroup = 0A702C5A2954552100D33F73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A702C582954552100D33F73 /* KlineWebRTCSwiftExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A702C572954552100D33F73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A702C642954552900D33F73 /* Preview Assets.xcassets in Resources */,
+				0A702C612954552900D33F73 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A702C552954552100D33F73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A702C7629545CB900D33F73 /* Contact.swift in Sources */,
+				0A702C7A29545D9B00D33F73 /* ContactView.swift in Sources */,
+				0A702C7E29545DF600D33F73 /* ParticipantView.swift in Sources */,
+				0A702C7129545C5100D33F73 /* NetworkManager.swift in Sources */,
+				0A702C7C29545DD200D33F73 /* RoomView.swift in Sources */,
+				0A702C5D2954552100D33F73 /* KlineWebRTCSwiftExampleApp.swift in Sources */,
+				0A702C7429545CA000D33F73 /* RoomData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0A702C652954552900D33F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0A702C662954552A00D33F73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0A702C682954552A00D33F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KlineWebRTCSwiftExample/Preview Content\"";
+				DEVELOPMENT_TEAM = R6KYF99TK3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "KLine Chat";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knt.KlineWebRTCSwiftExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A702C692954552A00D33F73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KlineWebRTCSwiftExample/Preview Content\"";
+				DEVELOPMENT_TEAM = R6KYF99TK3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "KLine Chat";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knt.KlineWebRTCSwiftExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A702C542954552100D33F73 /* Build configuration list for PBXProject "KlineWebRTCSwiftExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A702C652954552900D33F73 /* Debug */,
+				0A702C662954552A00D33F73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A702C672954552A00D33F73 /* Build configuration list for PBXNativeTarget "KlineWebRTCSwiftExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A702C682954552A00D33F73 /* Debug */,
+				0A702C692954552A00D33F73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A702C6A2954564B00D33F73 /* XCRemoteSwiftPackageReference "KLineWebRTC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/klinechatdev/KLineWebRTC.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		0A702C82295464E700D33F73 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A702C6B2954564B00D33F73 /* KLineWebRTC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A702C6A2954564B00D33F73 /* XCRemoteSwiftPackageReference "KLineWebRTC" */;
+			productName = KLineWebRTC;
+		};
+		0A702C83295464E700D33F73 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A702C82295464E700D33F73 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0A702C512954552100D33F73 /* Project object */;
+}
